@@ -27,9 +27,9 @@ public class MyLinkedList<T> implements List<T> {
         size ++;
     }
 
-   @Override
+    @Override
     public T get(int index) {
-       Objects.checkIndex(index, size);
+        Objects.checkIndex(index, size);
         return getNodeByIndex(index).val;
     }
     //

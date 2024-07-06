@@ -12,32 +12,27 @@ public class MyArrayList<T> {
         this.size = 0;
     }
 
-    // Add an element to the end of the list
     public void add(T value) {
         ensureCapacity(size + 1);
         data[size++] = value;
     }
 
-    // Remove the element at the specified index
     public void remove(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-        // Shift elements to the left to fill the gap
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
-        data[size - 1] = null; // Clear the last element
+        data[size - 1] = null;
         size--;
     }
 
-    // Clear the list
     public void clear() {
         Arrays.fill(data, null);
         size = 0;
     }
 
-    // Return the size of the list
     public int size() {
         return size;
     }
@@ -49,7 +44,6 @@ public class MyArrayList<T> {
         return (T) data[index];
     }
 
-    // Ensure the capacity of the internal array
     private void ensureCapacity(int minCapacity) {
         if (minCapacity > data.length) {
             int newCapacity = Math.max(data.length * 2, minCapacity);

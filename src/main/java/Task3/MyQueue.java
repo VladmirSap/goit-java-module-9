@@ -17,7 +17,6 @@ public class MyQueue<T> {
         last = -1;
     }
 
-    // Додає елемент в кінець черги
     public void add(T value) {
         if (size == elements.length) {
             resizeElements();
@@ -37,7 +36,6 @@ public class MyQueue<T> {
         last = size - 1;
     }
 
-    // Очищає чергу
     public void clear() {
         Arrays.fill(elements, null);
         size = 0;
@@ -50,7 +48,6 @@ public class MyQueue<T> {
         return size;
     }
 
-    // Повертає перший елемент черги без видалення
     public Object peek() {
         if (size == 0) {
             throw new IllegalStateException("Queue is empty");
@@ -58,7 +55,6 @@ public class MyQueue<T> {
         return elements[first];
     }
 
-    // Повертає і видаляє перший елемент черги
     public Object poll() {
         if (size == 0) {
             throw new IllegalStateException("Queue is empty");
